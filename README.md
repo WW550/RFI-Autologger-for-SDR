@@ -189,6 +189,9 @@ Receive → Listen → Measure → GPS Log → Map
 
 The goal is practical RF interference hunting in the field.
 
+## Installation
+Download the zip file. Unzip it in your desired directory. Create a shortcut from there to run the program.
+Make sure RTL-SDR driver is installed for RTL-SDR radio. Also ensure SDRPlay API is installed if using SDRPlay. HackRF One dll already included in the zip file.
 ---
 
 ## Credits
