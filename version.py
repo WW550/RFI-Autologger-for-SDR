@@ -1,0 +1,4 @@
+VERSION = "1.0.0-rc3"
+APP_VERSION = VERSION
+APP_NAME = "RFI Autologger for SDR by N4EAC"
+APP_TITLE = f"{APP_NAME} v{VERSION}"

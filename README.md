@@ -1,10 +1,8 @@
 # RFI Autologger for SDR by N4EAC
-<img width="1247" height="979" alt="image" src="https://github.com/user-attachments/assets/bed7e671-663d-4129-bb44-2ae018a3cccb" />
 
-
-**Version:** `1.0.0-rc1a`  
+**Version:** `1.0.0-rc3`  
 **Platform:** Windows 10/11  
-**Status:** First Release Candidate
+**Status:** Release Candidate 3
 
 RFI Autologger for SDR by N4EAC is a field-oriented RF interference logging tool for SDR receivers. It is designed to help locate and document RF interference by receiving a signal, measuring tuned-channel signal level in dBFS, recording GPS position, and exporting logs to CSV and Google Earth KML.
 
@@ -37,8 +35,11 @@ SDRplay support is functional but still marked beta. For SDRplay, connect the re
 - GPS serial connection support
 - CSV logging with GPS, frequency, mode, signal, and gain data
 - KML export for Google Earth
+- Optional KML signal text labels for cleaner map display
 - Editable KML color thresholds based on `Signal_dBFS`
 - Tuned-channel pre-demod IQ dBFS measurement for better RF mapping
+- Retro CDE-inspired beige/purple field UI
+- Clean shutdown when closing with the Windows X button
 
 ---
 
@@ -162,7 +163,7 @@ build_exe.bat
 The generated executable name is:
 
 ```text
-RFI_Autologger_for_SDR_by_N4EAC_v1.0.0-rc1aa.exe
+RFI_Autologger_for_SDR_by_N4EAC_v1.0.0-rc2a.exe
 ```
 
 ---
@@ -189,11 +190,32 @@ Receive → Listen → Measure → GPS Log → Map
 
 The goal is practical RF interference hunting in the field.
 
-## Installation
-<p>Download the zip file. Unzip it in your desired directory. Create a shortcut from there to run the program. Make sure RTL-SDR driver is installed for RTL-SDR radio. Also ensure SDRPlay API is installed if using SDRPlay. HackRF One dll already included in the zip file.</p>
 ---
 
 ## Credits
 
 Created through iterative testing and development with N4EAC.
 
+
+
+## v1.0.0-rc2 UI refinement
+
+RC2 is a cosmetic/layout release candidate intended to reduce visual clutter and UI refresh work while keeping the SDR/audio/GPS/KML logic from RC1a intact.
+
+Changes:
+
+- Removed duplicate GPS and SDR status text from the top-right corner.
+- Removed the bottom status line.
+- Renamed the display area to **Receiver Panel**.
+- Removed LNA/VGA values from the receiver panel and moved them next to their sliders.
+- Renamed **RF Gain** to **LNA**.
+- Removed slider range labels.
+- Frequency entry tunes with **Enter**; the Tune button was removed.
+- PPM correction applies with **Enter**; the Apply button was removed.
+- GPS controls moved to **Settings > GPS Settings**.
+- Connect/Refresh SDR moved below the mode buttons.
+- Start/Stop Logging and Save KML moved into the Logging Status panel.
+- ATT -10 dB and AMP positions swapped.
+- GPS coordinates/time remain visible in the Receiver Panel.
+
+Known limitation: SDRplay should be connected before launching the app; SDRplay hot-plug is not yet reliable.
